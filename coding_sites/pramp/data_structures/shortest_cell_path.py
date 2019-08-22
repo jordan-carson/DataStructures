@@ -48,6 +48,24 @@ def shortestCellPath(grid, sr, sc, tr, tc):
     return -1
 
 
+def shortestCellPath(grid, sr, sc, tr, tc):
+    q = deque()
+    q.append((sr, sc, 0))
+    seen = set()
+    seen.add((sr, sc))
+
+    while q:
+        r, c, depth = q.pop()
+        if r == tr and c == tc:
+            return depth
+        for (nr, nc) in ((r-1, c), (r+1, c), (r, c-1), (r, c+1)):
+            if 0 <= nr < R and
+
+
+
+
+
+
 
 grid = [[1, 1, 1, 1], [0, 0, 0, 1], [1, 1, 1, 1]]
 sr = 0

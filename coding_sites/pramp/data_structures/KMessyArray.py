@@ -22,6 +22,8 @@ def sort_k(arr, k):
 
 
 
+
+
 k = 3
 arr = [2, 6, 3, 12, 56, 8]
 print(sort_k(arr, k))
