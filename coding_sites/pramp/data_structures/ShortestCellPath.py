@@ -48,30 +48,31 @@ def shortestCellPath(grid, sr, sc, tr, tc):
     return -1
 
 
-def shortestCellPath(grid, sr, sc, tr, tc):
-    q = deque()
-    q.append((sr, sc, 0))
+def PRAMP_Answer_Shortest_Cell(grid, sr, sc, tr, tc):
+    queue = deque()
+    queue.append((sr, sc, 0))
     seen = set()
     seen.add((sr, sc))
 
-    while q:
-        r, c, depth = q.pop()
+    while queue:
+        r, c, depth = queue.pop()
         if r == tr and c == tc:
             return depth
         for (nr, nc) in ((r-1, c), (r+1, c), (r, c-1), (r, c+1)):
-            if 0 <= nr < R and
+            if 0 <= nr < len(grid) and 0 <= nc < len(grid[0]) and grid[nr][nc] == 1 and (nr, nc) not in seen:
+                queue.append((nr, nc, depth+1))
+                seen.add((nr, nc))
+
+    return -1
 
 
 
 
-
-
-
-grid = [[1, 1, 1, 1], [0, 0, 0, 1], [1, 1, 1, 1]]
+grid = [[1, 1, 1, 1], [0, 0, 0, 0], [1, 1, 1, 1]]
 sr = 0
 sc = 0
 tr = 2
 tc = 0
-print()
+print(PRAMP_Answer_Shortest_Cell(grid, sr, sc, tr, tc))
 
 
