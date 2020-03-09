@@ -1,4 +1,5 @@
-from ds_and_algos.trees import BinarySearchTree, TreeNode
+# from .trees import BinarySearchTree, TreeNode
+from .binary_search_tree import BinarySearchTree, TreeNode
 
 
 class AVLTreeNode(TreeNode):
